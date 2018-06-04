@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    form(method="post" style="margin-top: 80px")
+        .form-group
+            label Titre
+            input(type="text" name="title" class="form-control")
+        .row
+            div(class="col col-3")
+                .form-group
+                    label Nombre de personnes
+                    input(type="number" name="nbPerson" class="form-control")
+            div(class="col col-3")
+                .form-group
+                    label Temps de cuisson
+                    input(type="number" name="cookingTime" class="form-control" )
+            div(class="col col-3")
+                .form-group
+                    label Temps de préparation
+                    input(type="number" name="prepareTime" class="form-control" )
+            div(class="col col-3")
+                .form-group
+                    label Difficulé
+                    input(type="range" name="difficulty" class="form-control" min="1" max="5")
+            div(class="col col-6")
+                .form-group
+                    label Thème
+                    select(name="theme" class="form-control")
+                        each item in themeList
+                                option(value=item._id) #{item.name}
+            div(class="col col-6")
+                .form-group
+                    label Type de plat
+                    select(name="dishType" class="form-control")
+                        each item in dishTypeList
+                            option(value=item._id) #{item.name}
+            div(class="col col-12")
+                .form-group
+                    label Etapes
+                    textarea(name="steps", cols="30", rows="10" class="form-control")
+
+            div(class="col col-12")
+                .form-group
+                    button(type="submit" class="form-control btn btn-primary") Valider
+                        
+
+            

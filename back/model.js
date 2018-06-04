@@ -27,7 +27,7 @@ const Theme = new schema({
     name: { type: String, required: true }
 });
 
-const dishType = new schema({
+const DishType = new schema({
     name: { type: String, required: true }
 });
 
@@ -35,19 +35,20 @@ const Recipe = new schema({
     title: { type: String, required: true },
     ingredients: [{ type: schema.Types.ObjectId, ref: "Ingredients" }],
     cookingTime: { type: Number },
-    PrepareTime: { type: Number },
+    prepareTime: { type: Number },
     theme: { type: schema.Types.ObjectId, ref: "Themes" },
     dishType: { type: schema.Types.ObjectId, ref: "dishTypes" },
     difficulty: { type: Number, min: 1, max: 5 },
     nbPerson: { type: Number, min: 1 },
-    steps: { type: String },
-    ratings: [{
-        user: { type: schema.Types.ObjectId, ref: "users", unique: true },
+    steps: { type: String }
+    
+    ,ratings: [{
+        user: { type: schema.Types.ObjectId, ref: "users"},
         score: { type: Number, min: 1, max: 10 }
     }],
     comments: [
         {
-            user: { type: schema.Types.ObjectId, ref: "users", unique: true },
+            user: { type: schema.Types.ObjectId, ref: "users"},
             text: { type: String },
             createdAt: { type: Date, default: Date.now }
         }
@@ -58,6 +59,6 @@ module.exports = {
     user: mongoose.model("user", User),
     ingredient: mongoose.model("ingredient", Ingredient),
     theme: mongoose.model("theme", Theme),
-    dishType: mongoose.model("dishType", dishType),
+    dishType: mongoose.model("dishType", DishType),
     recipe: mongoose.model("recipe", Recipe)
 };
