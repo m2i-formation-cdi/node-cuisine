@@ -1,2 +1,24 @@
 extends layout.pug
 
+block content
+    h1 Liste des recettes
+
+    a(class="btn btn-primary" href="/recipe/form") Nouvelle recette
+
+    table(class="table table-bordered table-striped")
+        tr
+            th nom recette
+            th
+        each recipe in recipeList
+            tr
+                td= recipe.title
+                td= recipe.cookingTime
+                td= recipe.PrepareTime
+                td= recipe.difficulty
+                td= recipe.theme
+                td=recipe.nbPerson
+                td
+                    a(class="btn" href="/recipe/form/" + recipe._id) Afficher le détail
+                     a(class="btn" href="/recipe/delete/" + recipe._id) Supression
+                  
+
