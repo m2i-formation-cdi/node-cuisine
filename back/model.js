@@ -42,12 +42,12 @@ const Recipe = new schema({
     nbPerson: { type: Number, min: 1 },
     steps: { type: String },
     ratings: [{
-        user: { type: schema.Types.ObjectId, ref: "users", unique: true },
+        user: { type: schema.Types.ObjectId, ref: "users"},
         score: { type: Number, min: 1, max: 10 }
     }],
     comments: [
         {
-            user: { type: schema.Types.ObjectId, ref: "users", unique: true },
+            user: { type: schema.Types.ObjectId, ref: "users"},
             text: { type: String },
             createdAt: { type: Date, default: Date.now }
         }
