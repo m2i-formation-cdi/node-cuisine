@@ -13,7 +13,7 @@ app.set("views", "./views");
 app.set("view engine", "pug");
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));  
 
 app.use(session({secret: "que j'aime à faire apprendre une nombre utile aux sages"}));
 
