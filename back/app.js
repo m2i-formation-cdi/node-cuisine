@@ -24,7 +24,6 @@ app.get("/", (req, res) => {
     res.render("home");
 });
 
-<<<<<<< HEAD
 /************* Création d'une nouvelle recette *******************/
 
 app.use("/new-recipe", (req, res, next)=>{
@@ -74,7 +73,6 @@ app.post("/new-recipe", (req, res)=>{
     })
 });
 
-=======
 //u15 ajout d'un middleware admin avant d'accéder aux pages
 app.use('/admin*', (req, res, next)=>{
     let user = req.session.user
@@ -147,9 +145,7 @@ app.get("/admin/edit-ingredient/:id", (req, res)=>{
         }
     });
 })
->>>>>>> origin/laetitia-u15
 
-<<<<<<< HEAD
 // u15 : traitement du formulaire de modification de la collection ingredient par l'admin
 app.post("/admin/edit-ingredient/:id", (req, res)=>{
     const types = models.ingredient.schema.path("ingredientType").enumValues;
@@ -182,7 +178,6 @@ app.get('/admin/delete/:id', (req, res)=>{
         }
     });
 });
-=======
 //...afficher le formulaire d'inscription
 app.get('/inscription', (req, res) => {
     let message = req.session.message || {};
@@ -237,7 +232,6 @@ app.post('/inscription', (req, res) => {
     }
         
 }); 
->>>>>>> origin/guillaume-u1
 
 
 app.listen(3000, () => {
