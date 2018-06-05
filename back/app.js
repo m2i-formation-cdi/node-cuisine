@@ -19,12 +19,16 @@ app.use(bodyParser.urlencoded({
 
 app.use(session({
     secret: "que j'aime à faire apprendre une nombre utile aux sages"
-}));
+})); 
 
 mongoose.connect("mongodb://admin:admin123@ds241530.mlab.com:41530/mongo-test");
 
 app.get("/", (req, res) => {
     res.render("home");
+})
+
+app.get("/login", (req, res) => {
+    res.render("login");
 })
 
 //Traitement du formulaire
