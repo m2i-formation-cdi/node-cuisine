@@ -8,7 +8,11 @@ block content
     table(class="table table-bordered table-striped")
         tr
             th nom recette
-            th
+            th temps de préparation
+            th temps de cuisson
+            th Difficulté
+            th Theme
+            th Nb de personnes
         each recipe in recipeList
             tr
                 td= recipe.title
