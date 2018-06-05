@@ -49,16 +49,23 @@ const Recipe = new schema({
     steps: { type: String },
     ratings: [{
         user: { type: schema.Types.ObjectId, ref: "users" },
+<<<<<<< HEAD
 >>>>>>> origin/laetitia-u15
+=======
+>>>>>>> origin/guillaume-u1
         score: { type: Number, min: 1, max: 10 }
     }],
     comments: [
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             user: { type: schema.Types.ObjectId, ref: "users"},
 =======
             user: { type: schema.Types.ObjectId, ref: "users" },
 >>>>>>> origin/laetitia-u15
+=======
+            user: { type: schema.Types.ObjectId, ref: "users" },
+>>>>>>> origin/guillaume-u1
             text: { type: String },
             createdAt: { type: Date, default: Date.now }
         }

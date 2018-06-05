@@ -1,0 +1,36 @@
+extends layout.pug
+
+//-Register form 
+
+
+block content
+    form(method='POST'  style="margin-top:100px;")
+        .form-group
+            label Prénom :
+            input(type='text' placeholder='votre prénom' name='prenom' value ='guillaume' class='form-control' required)
+        
+        .form-group
+            label Nom :
+            input(type='text'  placeholder='votre nom' name='nom' value ='ngwe' class='form-control' required)
+    
+        .form-group
+                label Email :
+                input(type='email'  placeholder='nom@email.com' name='email' value ='nom@email.com' class='form-control' required)
+        
+        .form-group
+                label mot de passe :
+                input(type='password'  name='pwd' class='form-control' required)
+        
+       
+        .form-group
+                button(class='btn btn-primary' type='submit') m'inscrire
+
+        fieldset
+            legend: strong.text-info sign-in page
+
+            //- if message.error
+            //-     div.alert.alert-danger une information maquante, veuillez remplir tous les champs !!!
+
+            //- else if message.success
+            //-     div.alert.alert-success votre inscription a bien été enregistrée !!!
+
