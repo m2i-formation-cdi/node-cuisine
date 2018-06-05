@@ -1,6 +1,18 @@
+
 const express = require("express");
 const router = express.Router();
 const Model = require('./../model');
+
+//Middleware pour vérifier l'authentification
+router.use('', (req, res, next)=>{
+    let user = req.session.user
+    if(user){
+        next();
+    } else {
+        req.session.errorMessage = "Vous devez être authentifié pour accéder aux pages user";
+        res.redirect('/login');
+    }
+});
 
 router.get('/', (req, res) => {
     recipeModel.find({}, (err, data) => {
@@ -39,3 +51,7 @@ router.get('/delete/:id', (req,res)=>{
     })
 })
 module.exports=router;
+
+
+
+

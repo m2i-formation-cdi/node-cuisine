@@ -40,32 +40,14 @@ const Recipe = new schema({
     dishType: { type: schema.Types.ObjectId, ref: "dishTypes" },
     difficulty: { type: Number, min: 1, max: 5 },
     nbPerson: { type: Number, min: 1 },
-    steps: { type: String }
-    ,
+    steps: { type: String },
     ratings: [{
-<<<<<<< HEAD
-<<<<<<< HEAD
-        user: { type: schema.Types.ObjectId, ref: "users" },
-=======
         user: { type: schema.Types.ObjectId, ref: "users"},
->>>>>>> origin/u10
-=======
-        user: { type: schema.Types.ObjectId, ref: "users"},
->>>>>>> origin/lisa-u5
         score: { type: Number, min: 1, max: 10 }
     }],
     comments: [
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            user: { type: schema.Types.ObjectId, ref: "users" },
-
-=======
             user: { type: schema.Types.ObjectId, ref: "users"},
->>>>>>> origin/u10
-=======
-            user: { type: schema.Types.ObjectId, ref: "users"},
->>>>>>> origin/lisa-u5
             text: { type: String },
             createdAt: { type: Date, default: Date.now }
         }
