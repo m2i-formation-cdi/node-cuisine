@@ -1,0 +1,21 @@
+extends layout.pug
+
+block content
+    
+    h1(style="margin-top:60px;") Ingredients List
+
+    table(class="table table-bordered table-striped")
+        tr
+            th Name
+            th Type
+            th Description
+            th 
+                a(class="btn btn-primary" href="/admin/add-ingredient") New ingredient
+        each ing in ingList
+            tr
+                td #{ing.name}
+                td #{ing.ingredientType}
+                td #{ing.description}
+                td  
+                    a(class="btn btn-warning" href="/admin/edit-ingredient/" + ing._id) Edit
+                    a(class="btn btn-danger" href="/admin/delete/" + ing._id) Delete

@@ -1,0 +1,20 @@
+extends layout.pug
+
+block content
+    h2(style="margin-top:60px;")  Create or edit ingredient
+    form(method="post")
+        .form-group
+            label Name
+            input(type="text" class="form-control" name="name" value=ing.name)
+        .form-group
+            label Type
+            select(name="ingredientType" class="form-control")
+                each ingType in types
+                    option(selected=ingType==ing.ingredientType) #{ingType}
+        .form-group
+            label Description
+            textarea(class="form-control" name="description") #{ing.description}
+            input(type="hidden" name="id" value=ing._id)
+    
+        .form-group
+            button(class="btn btn-primary btn-block" type="submit") Validate
